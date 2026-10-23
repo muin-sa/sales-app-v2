@@ -6,15 +6,18 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Read .env.local for DATABASE_URL
+// Read .env.local for DATABASE_URL / DATABASE_URL_UNPOOLED
 const envFile = fs.readFileSync(path.join(__dirname, '..', '.env.local'), 'utf8');
-const match = envFile.match(/DATABASE_URL="?([^"\r\n]+)"?/);
-if (!match) {
-  console.error("No DATABASE_URL found in .env.local");
+const matchUnpooled = envFile.match(/DATABASE_URL_UNPOOLED="?([^"\r\n]+)"?/);
+const matchPooled = envFile.match(/DATABASE_URL="?([^"\r\n]+)"?/);
+
+// Migrations must use direct unpooled connection per Neon best practices
+const databaseUrl = matchUnpooled ? matchUnpooled[1] : (matchPooled ? matchPooled[1] : null);
+if (!databaseUrl) {
+  console.error("No DATABASE_URL or DATABASE_URL_UNPOOLED found in .env.local");
   process.exit(1);
 }
-const databaseUrl = match[1];
-console.log("Connecting to Neon Postgres via serverless driver...");
+console.log(`Connecting to Neon Postgres (${databaseUrl.includes('-pooler') ? 'pooled' : 'direct unpooled'})...`);
 
 const pool = new Pool({ connectionString: databaseUrl });
 const sql = neon(databaseUrl);
