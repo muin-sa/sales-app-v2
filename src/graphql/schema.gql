@@ -1,0 +1,69 @@
+type ContractEntity {
+  id: ID!
+  code: String!
+  nameAr: String!
+  nameEn: String!
+  city: String!
+  phone: String!
+  email: String!
+  isActive: Boolean!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  phone: String!
+  role: String!
+  baseSalary: Float!
+  commissionRate: Float!
+  monthlyTarget: Float!
+  status: String!
+}
+
+type Association {
+  id: ID!
+  name: String!
+  shortName: String
+  code: String!
+  licenseNumber: String!
+  category: String!
+  city: String!
+  contactPerson: String!
+  contactPhone: String!
+  contactEmail: String!
+  agreementCommissionRate: Float!
+  status: String!
+}
+
+type Request {
+  id: ID!
+  referenceNumber: String!
+  title: String!
+  category: String!
+  status: String!
+  priority: String!
+  targetAmount: Float!
+  totalBondsAmount: Float!
+  bondsCount: Int!
+  associationName: String
+  entityName: String
+}
+
+type SystemHealth {
+  databaseConnected: Boolean!
+  storageConnected: Boolean!
+  functionsConnected: Boolean!
+  databaseVersion: String
+  objectCount: Int
+  functionResponse: String
+  timestamp: String!
+}
+
+type Query {
+  contractEntities: [ContractEntity!]!
+  associations(entityCode: String): [Association!]!
+  requests(status: String): [Request!]!
+  users: [User!]!
+  systemHealth: SystemHealth!
+}
