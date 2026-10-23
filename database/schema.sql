@@ -415,12 +415,12 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- تطبيق التريجر على الجداول
-CREATE TRIGGER trg_users_updated_at BEFORE UPDATE ON users FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-CREATE TRIGGER trg_associations_updated_at BEFORE UPDATE ON associations FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-CREATE TRIGGER trg_requests_updated_at BEFORE UPDATE ON requests FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-CREATE TRIGGER trg_donation_bonds_updated_at BEFORE UPDATE ON donation_bonds FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-CREATE TRIGGER trg_licenses_updated_at BEFORE UPDATE ON licenses FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-CREATE TRIGGER trg_commissions_updated_at BEFORE UPDATE ON commissions FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+CREATE OR REPLACE TRIGGER trg_users_updated_at BEFORE UPDATE ON users FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+CREATE OR REPLACE TRIGGER trg_associations_updated_at BEFORE UPDATE ON associations FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+CREATE OR REPLACE TRIGGER trg_requests_updated_at BEFORE UPDATE ON requests FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+CREATE OR REPLACE TRIGGER trg_donation_bonds_updated_at BEFORE UPDATE ON donation_bonds FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+CREATE OR REPLACE TRIGGER trg_licenses_updated_at BEFORE UPDATE ON licenses FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+CREATE OR REPLACE TRIGGER trg_commissions_updated_at BEFORE UPDATE ON commissions FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 -- دالة وتريجر لتحديث مجاميع السندات في جدول الطلب تلقائياً عند إضافة أو حذف سند
 CREATE OR REPLACE FUNCTION sync_request_bonds_summary()
@@ -451,7 +451,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER trg_sync_request_bonds_summary
+CREATE OR REPLACE TRIGGER trg_sync_request_bonds_summary
 AFTER INSERT OR UPDATE OR DELETE ON donation_bonds
 FOR EACH ROW EXECUTE FUNCTION sync_request_bonds_summary();
 
