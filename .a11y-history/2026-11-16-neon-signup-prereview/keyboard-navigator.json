@@ -1,0 +1,9 @@
+{
+  "skill": "keyboard-navigator",
+  "scope": ["src/app/sign-up/page.tsx (planned)", "src/app/layout.tsx", "src/app/globals.css"],
+  "findings": [],
+  "passed": ["The root layout sets the document language to Arabic and direction to RTL."],
+  "notes": [
+    "Pre-implementation review only; the signup route does not exist yet. Use native controls in logical tab order, visible focus, focusable inline errors, and a clear destination after success. Add a skip link if the route includes repeated navigation."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "skill": "contrast-master",
+  "scope": ["src/app/globals.css", "src/app/auth/sign-in/page.tsx (planned)", "src/app/auth/sign-in/SignInForm.tsx (planned)"],
+  "findings": [],
+  "passed": [],
+  "notes": [
+    "Pre-implementation review only; the sign-in colors do not exist yet. Use at least 4.5:1 for normal text and 3:1 for field boundaries and focus indicators; do not rely on the global faint border or muted-text tokens without measuring their actual use."
+  ]
+}

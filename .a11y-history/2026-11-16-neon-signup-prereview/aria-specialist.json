@@ -1,0 +1,9 @@
+{
+  "skill": "aria-specialist",
+  "scope": ["src/app/sign-up/page.tsx (planned)"],
+  "findings": [],
+  "passed": ["The root layout sets the document language to Arabic and direction to RTL."],
+  "notes": [
+    "Pre-implementation review only; the signup route does not exist yet. Use one main landmark, one descriptive h1, a native form, visible associated labels, aria-describedby for help/errors, aria-invalid only on invalid fields, and status announcements for async results."
+  ]
+}

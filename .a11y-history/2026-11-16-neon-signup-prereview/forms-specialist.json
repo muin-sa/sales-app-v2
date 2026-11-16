@@ -1,0 +1,9 @@
+{
+  "skill": "forms-specialist",
+  "scope": ["src/app/sign-up/page.tsx (planned)", "src/app/layout.tsx"],
+  "findings": [],
+  "passed": ["The root layout sets the document language to Arabic and direction to RTL."],
+  "notes": [
+    "Pre-implementation review only; the signup route does not exist yet. Use visible labels, required email/password controls, email and new-password autocomplete, associated field errors, submission error focus, and password-manager-compatible controls."
+  ]
+}

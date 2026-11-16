@@ -1,0 +1,9 @@
+{
+  "skill": "live-region-controller",
+  "scope": ["src/app/auth/sign-in/page.tsx (planned)", "src/app/auth/sign-in/SignInForm.tsx (planned)"],
+  "findings": [],
+  "passed": [],
+  "notes": [
+    "Pre-implementation review only; the sign-in page does not exist yet. Announce loading and credential/network failures with persistent status or alert regions. Ensure the Dashboard route has a clear heading and focus destination after sign-in."
+  ]
+}

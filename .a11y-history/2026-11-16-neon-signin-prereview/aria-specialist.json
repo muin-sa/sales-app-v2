@@ -1,0 +1,9 @@
+{
+  "skill": "aria-specialist",
+  "scope": ["src/app/auth/sign-in/page.tsx (planned)", "src/app/auth/sign-in/SignInForm.tsx (planned)", "src/app/auth/sign-up/SignUpForm.tsx"],
+  "findings": [],
+  "passed": [],
+  "notes": [
+    "Pre-implementation review only; the sign-in files do not exist yet. Use one main landmark, one h1, a native form and labeled inputs. Keep a persistent status region for pending updates; announce form-level errors and associate field-specific errors with their inputs."
+  ]
+}
