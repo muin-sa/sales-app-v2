@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Menu } from 'lucide-react';
 import type { Dispatch, SetStateAction } from 'react';
 
@@ -24,9 +25,13 @@ export default function MobileHeader({ isOpen, setIsOpen }: MobileHeaderProps) {
         <Menu aria-hidden="true" className="h-5 w-5" />
       </button>
       <div className="flex min-w-0 items-center gap-3 space-x-reverse">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-indigo-950 text-base font-bold text-white" aria-hidden="true">
-          ب
-        </span>
+        <Image
+          src="/bayt-tamkeen-logo.jpg"
+          alt=""
+          width={36}
+          height={36}
+          className="h-9 w-9 shrink-0 rounded-full bg-white object-contain ring-1 ring-slate-200"
+        />
         <div className="min-w-0">
           <p className="truncate text-sm font-bold text-slate-900 dark:text-white">بيت التمكين</p>
           <p className="truncate text-xs text-slate-500 dark:text-slate-400">منصة المبيعات</p>

@@ -141,7 +141,11 @@ export default function Dashboard({
         }
       />
 
-      <main className="max-w-7xl w-full mx-auto px-6 md:px-8 mt-8 space-y-8 pb-16">
+      <main
+        id="dashboard-main"
+        tabIndex={-1}
+        className="max-w-7xl w-full mx-auto px-6 md:px-8 mt-8 space-y-8 pb-16 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-700"
+      >
         {/* 2. Top KPI Metrics (4 Cards Grid) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Card 1: المستهدف الشهري (Purple tint) */}

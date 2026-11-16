@@ -1,0 +1,9 @@
+{
+  "skill": "alt-text-headings",
+  "scope": ["src/app/layout.tsx", "src/app/auth/sign-in/page.tsx (planned)", "src/app/auth/sign-up/page.tsx"],
+  "findings": [],
+  "passed": ["The root layout sets lang=\"ar\" and dir=\"rtl\"."],
+  "notes": [
+    "Pre-implementation review only; the sign-in page does not exist yet. Give it a distinct Arabic title, exactly one main landmark and a descriptive h1. Avoid heading-level skips; the RTL language and direction inherit from the root layout."
+  ]
+}

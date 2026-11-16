@@ -1,0 +1,9 @@
+{
+  "skill": "alt-text-headings",
+  "scope": ["src/app/layout.tsx", "src/app/sign-up/page.tsx (planned)"],
+  "findings": [],
+  "passed": ["The root document declares lang=\"ar\" and dir=\"rtl\"."],
+  "notes": [
+    "Pre-implementation review only; the signup route does not exist yet. Set route-specific descriptive metadata, exactly one descriptive h1, and a main landmark. Provide a skip link if repeated content precedes the form."
+  ]
+}

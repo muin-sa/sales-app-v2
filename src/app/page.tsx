@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "@/components/layout/Sidebar";
 import Dashboard from "@/components/dashboard/Dashboard";
 import RequestCenterView from "@/components/requests/RequestCenterView";
@@ -15,6 +15,19 @@ import PhonesAndDataPage from "@/components/data/PhonesAndDataPage";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<string>("dashboard");
+
+  useEffect(() => {
+    if (
+      window.sessionStorage.getItem("focus-dashboard-after-sign-in") !== "true"
+    ) {
+      return;
+    }
+
+    window.sessionStorage.removeItem("focus-dashboard-after-sign-in");
+    window.requestAnimationFrame(() => {
+      document.getElementById("dashboard-main")?.focus();
+    });
+  }, []);
 
   return (
     <div className="flex min-h-screen bg-[#F8FAFC]">

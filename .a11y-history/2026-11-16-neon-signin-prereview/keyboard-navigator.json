@@ -1,0 +1,9 @@
+{
+  "skill": "keyboard-navigator",
+  "scope": ["src/app/auth/sign-in/page.tsx (planned)", "src/app/auth/sign-in/SignInForm.tsx (planned)", "src/app/auth/sign-up/SignUpForm.tsx"],
+  "findings": [],
+  "passed": [],
+  "notes": [
+    "Pre-implementation review only; the sign-in files do not exist yet. Preserve native tab order, visible focus, focusable error feedback, and move focus to the Dashboard heading after successful client-side navigation. Add a descriptive sign-in link to the signup form."
+  ]
+}

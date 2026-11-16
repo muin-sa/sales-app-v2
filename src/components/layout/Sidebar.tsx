@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
   LayoutDashboard,
   Building2,
@@ -13,8 +14,7 @@ import {
   History,
   Settings,
   PanelRightClose,
-  PanelRightOpen,
-  Sparkles
+  PanelRightOpen
 } from "lucide-react";
 
 interface SidebarProps {
@@ -48,9 +48,13 @@ export default function Sidebar({ activeTab = "dashboard", onSelectTab }: Sideba
       <div>
         <div className="h-20 flex items-center justify-between px-5 border-b border-slate-100">
           <div className="flex items-center gap-3 overflow-hidden">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-950 to-indigo-900 flex items-center justify-center text-white shadow-sm shrink-0 border border-indigo-800">
-              <Sparkles className="w-5 h-5 text-amber-300" />
-            </div>
+            <Image
+              src="/bayt-tamkeen-logo.jpg"
+              alt=""
+              width={40}
+              height={40}
+              className="h-10 w-10 shrink-0 rounded-full bg-white object-contain ring-1 ring-slate-200"
+            />
             {!collapsed && (
               <div className="flex flex-col text-right">
                 <span className="font-bold text-slate-900 text-base leading-tight tracking-tight">

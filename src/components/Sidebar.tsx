@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 import type { Dispatch, SetStateAction, TouchEvent } from 'react';
@@ -128,9 +129,13 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           onClick={() => setIsOpen(false)}
           className="flex min-w-0 items-center space-x-3 space-x-reverse"
         >
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-950 text-lg font-bold text-white" aria-hidden="true">
-            ب
-          </span>
+          <Image
+            src="/bayt-tamkeen-logo.jpg"
+            alt=""
+            width={40}
+            height={40}
+            className="h-10 w-10 shrink-0 rounded-full bg-white object-contain ring-1 ring-slate-200"
+          />
           <span className="flex min-w-0 flex-col">
             <span className="truncate text-sm font-bold text-slate-900 dark:text-white">بيت التمكين</span>
             <span className="truncate text-xs text-slate-500 dark:text-slate-400">منصة المبيعات</span>

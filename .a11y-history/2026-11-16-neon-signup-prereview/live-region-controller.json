@@ -1,0 +1,9 @@
+{
+  "skill": "live-region-controller",
+  "scope": ["src/app/sign-up/page.tsx (planned)"],
+  "findings": [],
+  "passed": [],
+  "notes": [
+    "Pre-implementation review only; the signup route does not exist yet. Announce loading and successful submission through a polite status region; associate field errors with inputs and announce submission failures."
+  ]
+}
